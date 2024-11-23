@@ -58,3 +58,40 @@ Handling non-linear relationships in data
 Dealing with complex interactions between features
 It should be used when high predictive accuracy is needed, especially for structured, tabular data.
 
+
+**1)What does the model you have implemented do and when should it be used?**
+The implemented model is a Gradient Boosting Machine for regression tasks. It creates a series of decision trees, each aiming to correct the errors of its predecessors. This ensemble approach progressively reduces the overall prediction error.
+Use this model when:
+You're dealing with structured data and need high predictive accuracy.
+Your regression problem involves complex, non-linear relationships between features and the target variable.
+You're willing to trade some interpretability for improved predictive performance.
+You have sufficient computational resources, as GBM can be demanding.
+
+**2)How did you test your model to determine if it is working reasonably correctly?**
+The model's correctness was verified through several steps:
+A synthetic dataset was generated to ensure known properties.
+The data was split into training and test sets.
+The model was trained on the training data and used to predict the test set.
+Mean Squared Error (MSE) was calculated to quantify prediction accuracy.
+A scatter plot comparing actual vs. predicted values was created, allowing visual assessment of the model's performance.
+The plot includes an ideal fit line (y=x) to easily spot deviations in predictions.
+This multi-faceted approach combines numerical metrics with visual inspection to comprehensively evaluate the model's performance.
+
+**3)What parameters have you exposed to users of your implementation in order to tune performance?**
+The implementation exposes three key parameters:
+a) n_estimators: Controls the number of trees in the ensemble. More trees can improve accuracy but increase computation time.
+b) learning_rate: Determines how strongly each tree's predictions are weighted. Lower rates can lead to better generalization but may require more trees.
+c) max_depth: Limits the depth of individual trees, helping to prevent overfitting.
+
+**4)Are there specific inputs that your implementation has trouble with? Given more time, could you work around these or is it fundamental?**
+The current implementation faces challenges with:
+High-dimensional data: Performance may degrade with many features.
+Categorical variables: These require pre-processing as the model expects numerical inputs.
+Large datasets: The model may become slow with very large amounts of data.
+Overfitting: Without proper regularization, the model might overfit on small datasets.
+
+Given more time, these limitations could be addressed:
+Implement feature importance and selection techniques for high-dimensional data.
+Add built-in handling of categorical variables.
+Incorporate subsampling methods for better performance on large datasets.
+Implement regularization techniques and cross-validation for improved generalization.
