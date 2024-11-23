@@ -2,6 +2,11 @@
 
 Select one of the following two options:
 
+**TEAM MEMBERS**
+Roshan Krishnamoorthy A20592056
+Nisha Mayilraj A20592055
+Nithish Kannan Kuppal Thulasiraman A20593857
+
 ## Boosting Trees
 
 Implement the gradient-boosting tree algorithm (with the usual fit-predict interface) as described in Sections 10.9-10.10 of Elements of Statistical Learning (2nd Edition). Answer the questions below as you did for Project 1.
